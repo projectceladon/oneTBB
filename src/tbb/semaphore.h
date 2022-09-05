@@ -27,7 +27,11 @@
 #include <mach/mach_init.h>
 #include <mach/error.h>
 #else
+#ifdef __ANDROID__
+#include <include/semaphore.h>
+#else
 #include <semaphore.h>
+#endif
 #ifdef TBB_USE_DEBUG
 #include <cerrno>
 #endif
